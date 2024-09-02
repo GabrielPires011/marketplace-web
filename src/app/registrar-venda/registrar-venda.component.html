@@ -1,1 +1,12 @@
-<p>registrar-venda works!</p>
+<form [formGroup]="vendaForm" (ngSubmit)="onSubmit()">
+  <label for="descricao">Descrição:</label>
+  <input id="descricao" formControlName="descricao"/>
+  <label for="valor">Valor:</label>
+  <input id="valor" formControlName="valor"/>
+  <label for="cartaoCredito">Cartão de Crédito:</label>
+  <input id="cartaoCredito" formControlName="cartaoCredito"/>
+  <button type="submit" [disabled]="vendaForm.invalid">Registrar Venda</button>
+</form>
+<div *ngIf="status">
+  Status da transação: {{ status }}
+</div>

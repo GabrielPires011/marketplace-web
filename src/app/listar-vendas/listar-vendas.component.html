@@ -1,0 +1,4 @@
+<div *ngFor="let venda of vendas">
+  <p>{{ venda.descricao }} - {{ venda.valor }}</p>
+  <button (click)="cancelarVenda(venda.id)">Cancelar</button>
+</div>
