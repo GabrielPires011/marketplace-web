@@ -1,0 +1,16 @@
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  background: rgb(24, 38, 51);
+  color: white;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 16px;
+}
+
+span {
+  font-size: 20px;
+}
