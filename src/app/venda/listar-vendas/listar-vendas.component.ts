@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VendasService } from '../service/vendas.service';
+import { VendasService } from '../../service/vendas.service';
 @Component({
   selector: 'app-listar-vendas',
   templateUrl: './listar-vendas.component.html'

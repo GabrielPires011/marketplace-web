@@ -12,10 +12,10 @@ export class VendasService {
     return this.http.post(`${this.apiURL}`, vendaData);
   }
   listarVendas(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiURL}listar`);
+    return this.http.get<any[]>(`${this.apiURL}lista`);
   }
   cancelarVenda(vendaId: string): Observable<any> {
-    return this.http.delete(`${this.apiURL}cancelar/${vendaId}`);
+    return this.http.delete(`${this.apiURL}cancela/${vendaId}`);
   }
 }
 

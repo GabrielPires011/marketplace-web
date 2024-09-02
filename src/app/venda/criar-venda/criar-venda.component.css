@@ -1,0 +1,12 @@
+.mat-card {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mat-card-title {
+  font-size: 1.5rem;
+}
+
+textarea.mat-input-element {
+  resize: vertical;
+}

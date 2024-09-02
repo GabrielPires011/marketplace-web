@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="text-center">Cadastrar Venda com Cartão</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="vendaForm" (ngSubmit)="onSubmit()">
+        <mat-horizontal-stepper linear #stepper>
+          <!-- Etapa 1: Dados do Cartão -->
+          <mat-step>
+            <ng-template matStepLabel>Dados do Cartão</ng-template>
+            <mat-form-field appearance="fill" class="w-100 mb-3">
+              <mat-label>Nome do Cliente</mat-label>
+              <input matInput formControlName="nomeCliente" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="w-100 mb-3">
+              <mat-label>Número do Cartão</mat-label>
+              <input matInput formControlName="numeroCartao" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="w-100 mb-3">
+              <mat-label>Data de Validade</mat-label>
+              <input matInput formControlName="validadeCartao" placeholder="MM/AA" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="w-100 mb-3">
+              <mat-label>CVV</mat-label>
+              <input matInput type="password" formControlName="cvv" required>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" matStepperNext>Próxima Etapa</button>
+          </mat-step>
+
+          <!-- Etapa 2: Detalhes da Venda -->
+          <mat-step>
+            <ng-template matStepLabel>Detalhes da Venda</ng-template>
+            <mat-form-field appearance="fill" class="w-100 mb-3">
+              <mat-label>Valor da Venda</mat-label>
+              <input matInput formControlName="valorVenda" type="number" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="w-100 mb-3">
+              <mat-label>Descrição</mat-label>
+              <textarea matInput formControlName="descricao" rows="4"></textarea>
+            </mat-form-field>
+
+            <button mat-button matStepperPrevious>Voltar</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="vendaForm.invalid">Cadastrar Venda</button>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
