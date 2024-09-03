@@ -39,7 +39,7 @@ export class CriarVendaComponent implements OnInit {
           Validators.minLength(3)
         ]],
       valorVenda: ['', Validators.required],
-      descricao: ['']
+      descricao: ['', Validators.required]
     });
   }
 
@@ -73,5 +73,9 @@ export class CriarVendaComponent implements OnInit {
           this.toastr.error(error.error, 'Erro em criar venda!');
         })
     }
+  }
+
+  voltar(): void  {
+    this.router.navigate(['/venda']);
   }
 }

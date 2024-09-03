@@ -10,6 +10,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatOption, MatSelect} from "@angular/material/select";
+import {MatTableModule} from "@angular/material/table";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatIcon} from "@angular/material/icon";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -26,8 +30,12 @@ import {MatOption, MatSelect} from "@angular/material/select";
     MatStepperModule,
     VendaRoutingModule,
     MatSelect,
-    MatOption
-
+    MatTableModule,
+    MatButtonModule,
+    MatMenuModule,
+    BrowserAnimationsModule,
+    MatOption,
+    MatIcon
   ],
   exports: [
     ListarVendasComponent,

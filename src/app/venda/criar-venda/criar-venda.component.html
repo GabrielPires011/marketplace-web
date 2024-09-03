@@ -1,7 +1,10 @@
 <div class="container mt-5">
   <mat-card>
     <mat-card-header>
-      <mat-card-title class="text-center">Cadastrar Venda com Cartão</mat-card-title>
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <mat-card-title>Criar Venda</mat-card-title>
+        <button mat-raised-button color="primary" (click)="voltar()">Voltar</button>
+      </div>
     </mat-card-header>
     <mat-card-content>
       <form [formGroup]="vendaForm" (ngSubmit)="onSubmit()">

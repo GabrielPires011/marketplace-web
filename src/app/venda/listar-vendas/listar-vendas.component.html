@@ -1,4 +1,50 @@
-<div *ngFor="let venda of vendas">
-  <p>{{ venda.descricao }} - {{ venda.valor }}</p>
-  <button (click)="cancelarVenda(venda.id)">Cancelar</button>
+<div class="container mt-5">
+  <mat-card>
+    <mat-card-header>
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <mat-card-title>Listar Vendas</mat-card-title>
+        <button mat-raised-button color="primary" (click)="criarVenda()">Criar Venda</button>
+      </div>
+    </mat-card-header>
+    <mat-card-content class="card-content-spacing">
+      <mat-table [dataSource]="vendas" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+          <mat-cell *matCellDef="let venda">{{ venda.id }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="descricao">
+          <mat-header-cell *matHeaderCellDef>Descrição</mat-header-cell>
+          <mat-cell *matCellDef="let venda">{{ venda.descricao }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="valor">
+          <mat-header-cell *matHeaderCellDef>Valor</mat-header-cell>
+          <mat-cell *matCellDef="let venda">{{ venda.valor | currency }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+          <mat-cell *matCellDef="let venda">{{ venda.status }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="acoes">
+          <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
+          <mat-cell *matCellDef="let venda">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Ações">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="cancelarVenda(venda)">Cancelar</button>
+            </mat-menu>
+          </mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </mat-card-content>
+  </mat-card>
 </div>
