@@ -30,8 +30,8 @@ export class ListarVendasComponent implements OnInit {
   }
 
   cancelarVenda(venda: any): void {
-    this.vendasService.cancelarVenda(venda.id).subscribe(response => {
-      this.vendas.data = this.vendas.data.filter(v => v.id !== venda.id);
+    this.vendasService.cancelarVenda(venda.id).subscribe(() => {
+      this.carregarVendas();
     });
   }
 

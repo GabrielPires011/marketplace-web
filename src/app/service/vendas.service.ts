@@ -15,8 +15,8 @@ export class VendasService {
   listarVendas(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiURL}/lista`);
   }
-  cancelarVenda(vendaId: string): Observable<any> {
-    return this.http.delete(`${this.apiURL}/cancela/${vendaId}`);
+  cancelarVenda(id: string): Observable<any> {
+    return this.http.delete(`${this.apiURL}/cancela/${id}`);
   }
 }
 
