@@ -1,4 +1,4 @@
 export class AutenticacaoDto {
   email?: string;
-  senha?: string
+  senha?: string;
 }

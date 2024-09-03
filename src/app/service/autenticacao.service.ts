@@ -4,7 +4,7 @@ import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {Router} from "@angular/router";
 import {environment} from "../../../environment";
-import {AutenticacaoDto} from "../model/autenticacao-dto.model";
+import {AutenticacaoDto} from "../model/autenticacao-dto";
 
 @Injectable({
   providedIn: 'root'

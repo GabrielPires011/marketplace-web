@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AutenticacaoDto} from "../../model/autenticacao-dto.model";
+import {AutenticacaoDto} from "../../model/autenticacao-dto";
 import {Router} from "@angular/router";
 import {AutenticacaoService} from "../../service/autenticacao.service";
 
@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
         }, 100)
       },
       (error) => {
-        console.log(error)
         this.mensagemErro = error.error
         this.loginInvalido = true;
         this.loginEfetuadoComSucesso = false;
