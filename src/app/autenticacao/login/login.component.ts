@@ -39,7 +39,11 @@ export class LoginComponent implements OnInit {
         }, 100)
       },
       (error) => {
-        this.mensagemErro = error.error
+        if (error.error == null) {
+          this.mensagemErro = "Credenciais inválidas"
+        } else {
+          this.mensagemErro = error.error
+        }
         this.loginInvalido = true;
         this.loginEfetuadoComSucesso = false;
       });

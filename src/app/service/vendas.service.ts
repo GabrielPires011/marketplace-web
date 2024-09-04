@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {environment} from "../../../environment";
 import {CriarPagamentoDto} from "../model/criar-pagamento-dto";
+import {CancelarPagamentoDto} from "../model/cancelar-pagamento-dto";
 @Injectable({
   providedIn: 'root'
 })
@@ -15,8 +16,8 @@ export class VendasService {
   listarVendas(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiURL}/lista`);
   }
-  cancelarVenda(id: string): Observable<any> {
-    return this.http.delete(`${this.apiURL}/cancela/${id}`);
+  cancelarVenda(cancelarPagamentoDto: CancelarPagamentoDto): Observable<any> {
+    return this.http.put(`${this.apiURL}/cancela`, cancelarPagamentoDto);
   }
 }
 
