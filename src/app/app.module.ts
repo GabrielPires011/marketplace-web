@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -13,6 +13,10 @@ import {VendaModule} from "./venda/venda.module";
 import {Interceptor} from "./configuracao/interceptor";
 import {AutenticacaoModule} from "./autenticacao/autenticacao.module";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {registerLocaleData} from "@angular/common";
+import localePt from '@angular/common/locales/pt';
+
+registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
   declarations: [
@@ -36,7 +40,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
       useClass: Interceptor,
       multi: true
     },
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' }
   ],
   bootstrap: [AppComponent]
 })

@@ -67,6 +67,7 @@ export class CriarVendaComponent implements OnInit {
 
       this.service.criarVenda(pagamento).subscribe(
         () => {
+          this.router.navigate(['/venda']);
           this.toastr.success('Venda criada com sucesso.');
         },
         (error) => {
