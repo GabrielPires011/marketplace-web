@@ -5,7 +5,8 @@ import {AutenticacaoGuarda} from "./autenticacao/autenticacao-guarda";
 const routes: Routes = [
   { path: '', redirectTo: '/autenticacao', pathMatch: 'full' },
   { path: 'autenticacao', loadChildren: () => import('./autenticacao/autenticacao.module').then(m => m.AutenticacaoModule) },
-  { path: 'venda', loadChildren: () => import('./venda/venda.module').then(m => m.VendaModule), canActivate: [AutenticacaoGuarda] }
+  { path: 'venda', loadChildren: () => import('./venda/venda.module').then(m => m.VendaModule), canActivate: [AutenticacaoGuarda] },
+  { path: 'log', loadChildren: () => import('./log/log.module').then(m => m.LogModule), canActivate: [AutenticacaoGuarda] }
 ];
 
 @NgModule({

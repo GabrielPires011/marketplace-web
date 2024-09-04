@@ -15,6 +15,8 @@ import {AutenticacaoModule} from "./autenticacao/autenticacao.module";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {registerLocaleData} from "@angular/common";
 import localePt from '@angular/common/locales/pt';
+import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
+import {LogModule} from "./log/log.module";
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -26,13 +28,17 @@ registerLocaleData(localePt, 'pt-BR');
     BrowserModule,
     AutenticacaoModule,
     VendaModule,
+    LogModule,
     HttpClientModule,
     RouterModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
     AppRoutingModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatMenu,
+    MatMenuItem,
+    MatMenuTrigger
   ],
   providers: [
     {

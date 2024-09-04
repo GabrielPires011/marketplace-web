@@ -1,0 +1,54 @@
+<div class="container mt-5">
+  <mat-card>
+    <mat-card-header>
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <mat-card-title>Listar Logs da Cielo</mat-card-title>
+      </div>
+    </mat-card-header>
+    <mat-card-content class="card-content-spacing">
+      <mat-table [dataSource]="logs" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="idPagamento">
+          <mat-header-cell *matHeaderCellDef>ID de Pagamento</mat-header-cell>
+          <mat-cell *matCellDef="let log">{{ log.idPagamento }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="dataOperacao">
+          <mat-header-cell *matHeaderCellDef>Data da operação</mat-header-cell>
+          <mat-cell *matCellDef="let log">  {{ log.dataOperacao | date: 'dd/MM/yyyy HH:mm:ss' }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="statusResposta">
+          <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+          <mat-cell *matCellDef="let log">{{ log.statusResposta }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="codigoResposta">
+          <mat-header-cell *matHeaderCellDef>Código</mat-header-cell>
+          <mat-cell *matCellDef="let log">{{ log.codigoResposta }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="mensagemResposta">
+          <mat-header-cell *matHeaderCellDef>Mensagem</mat-header-cell>
+          <mat-cell *matCellDef="let log">{{ log.mensagemResposta }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="acoes">
+          <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
+          <mat-cell *matCellDef="let log">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Ações">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="visualizar(log)">Visualizar</button>
+            </mat-menu>
+          </mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </mat-card-content>
+  </mat-card>
+</div>

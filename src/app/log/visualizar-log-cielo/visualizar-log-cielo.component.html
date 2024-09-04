@@ -1,0 +1,61 @@
+<div class="container mt-4">
+  <mat-card>
+    <mat-card-header>
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <mat-card-title>Detalhes do Log</mat-card-title>
+        <button mat-raised-button color="primary" (click)="voltar()">Voltar</button>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <strong>ID:</strong>
+          <p>{{ log?.id }}</p>
+        </div>
+        <div class="col-md-6">
+          <strong>Data da Operação:</strong>
+          <p>{{ log?.dataOperacao | date: 'short' }}</p>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <strong>Status da Resposta:</strong>
+          <p>{{ log?.statusResposta }}</p>
+        </div>
+        <div class="col-md-6">
+          <strong>Código da Resposta:</strong>
+          <p>{{ log?.codigoResposta }}</p>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <strong>Mensagem da Resposta:</strong>
+          <p>{{ log?.mensagemResposta }}</p>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <strong>Mensagem de Erro:</strong>
+          <p>{{ log?.mensagemErro || 'Nenhum erro informado' }}</p>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <strong>Corpo da Resposta:</strong>
+          <pre>{{ log?.corpoResposta }}</pre>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <strong>ID do Pagamento:</strong>
+          <p>{{ log?.idPagamento }}</p>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

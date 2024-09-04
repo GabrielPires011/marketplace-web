@@ -1,0 +1,13 @@
+mat-card {
+  background-color: #f9f9f9;
+}
+
+strong {
+  color: #333;
+}
+
+pre {
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 4px;
+}

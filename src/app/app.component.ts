@@ -27,4 +27,8 @@ export class AppComponent implements OnInit{
     const url = this.router.url;
     this.showToolbar = !url.startsWith('/autenticacao');
   }
+
+  navegarPara(destino: string): void {
+    this.router.navigate([`/${destino}`]);
+  }
 }
